@@ -6,7 +6,8 @@ const app = express();
 
 // define port number
 const port = 8000;
-
+// set up the route for project
+app.use('/', require('./routes/index'));
 
 /// listen the port no using a callback function
 app.listen(port, function(err) {
