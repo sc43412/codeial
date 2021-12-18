@@ -8,7 +8,8 @@ const app = express();
 const port = 8000;
 // set up the route for project
 app.use('/', require('./routes/index'));
-
+app.set('view engine', 'ejs');
+app.set('views', './views');
 /// listen the port no using a callback function
 app.listen(port, function(err) {
     // using interpolation to print 
