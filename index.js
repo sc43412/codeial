@@ -8,8 +8,13 @@ const app = express();
 
 // define port number
 const port = 8000;
-// use express layouts
+app.use(express.static('./assets'))
+    // use express layouts
 app.use(expressLayouts);
+
+// extract styles and script from sub pages to layout
+app.set('layout extractStyles', true);
+app.set('layout extractJavascript', true);
 // set up the route for project
 app.use('/', require('./routes/index'));
 app.set('view engine', 'ejs');
