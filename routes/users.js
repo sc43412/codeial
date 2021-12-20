@@ -7,10 +7,15 @@ console.log('user router added in user.js')
 const usersController = require('../controllers/users_Controller')
     ///post controller
 const postController = require('../controllers/post_Controllers')
-    //// profile page route
+    ///
+
+//// profile page route
 router.get('/profile', usersController.profile);
 //// post page route
 router.get('/posts', postController.posts)
+router.get('/sign-in', usersController.signIn)
+router.get('/sign-up', usersController.signUp)
+router.post('/create', usersController.create)
 
 
 module.exports = router;
