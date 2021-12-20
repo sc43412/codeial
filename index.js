@@ -13,7 +13,7 @@ const cookieParser = require('cookie-parser')
 const app = express();
 
 // define port number
-const port = 7000;
+const port = 5000;
 // database connect
 const db = require('./config/mongoose')
 app.use(express.static('./assets'))
