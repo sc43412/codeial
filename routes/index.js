@@ -6,6 +6,7 @@ const router = express.Router();
 console.log('hello router is connected successfully')
 router.get('/', homeController.add);
 router.use('/users', require('./users'));
+router.use('/posts', require('./posts'))
 
 
 module.exports = router;

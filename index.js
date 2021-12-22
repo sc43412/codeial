@@ -21,6 +21,7 @@ const passport = require('passport');
 const passportStrategy = require('./config/passport-local-strategy');
 
 
+
 //// STATIC
 app.use(express.static('./assets'))
 
