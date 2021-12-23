@@ -1,3 +1,9 @@
+const Post = require('../models/post')
 module.exports.add = function(req, res) {
-    res.render("home");
+    Post.find({}).populate('user').exec(function(err, posts) {
+        return res.render('home', {
+            posts: posts
+        })
+    })
+
 }
