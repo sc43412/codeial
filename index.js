@@ -72,6 +72,7 @@ app.use(passport.session());
 app.use(passport.setAuthenticatedUser);
 
 
+
 // set up the route for project
 app.use('/', require('./routes/index'));
 
@@ -83,4 +84,5 @@ app.listen(port, function(err) {
     // console.log('hello : ${2+2}');  ouput = hello : 4
     if (err) { console.log('error : ${err}'); }
     console.log('server is running successfully on port', port);
+    
 })
