@@ -11,8 +11,9 @@ const postController = require('../controllers/post_Controllers')
     ///
 
 //// profile page route
-router.get('/profile', usersController.profile);
-
+router.get('/profile/:profileid',passport.checkAuthentication, usersController.profile);
+// router.post('/update/:updateid',passport.checkAuthentication,usersController.update)
+router.post('/up/:updateid',usersController.mean);
 router.get('/sign-in', usersController.signIn)
 router.get('/sign-up', usersController.signUp)
 router.post('/create', usersController.create)

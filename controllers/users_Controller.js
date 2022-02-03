@@ -1,6 +1,25 @@
+// const User = require('../models/user');
 const User = require('../models/user')
 module.exports.profile = function(req, res) {
-    return res.render('user_profile.ejs', )
+    User.findById({_id : req.params.profileid},function(err,user){
+        return res.render('user_profile.ejs',{
+            oneuser : user
+        } )
+    })
+   
+}
+module.exports.mean= function(req,res){
+    console.log(req.user.id);
+    console.log(req.params.updateid);
+    console.log(req.body);
+      if(req.user.id==req.params.updateid){
+            User.findByIdAndUpdate(req.params.updateid,req.body,function(err){
+              if(err){ console.log("not updated");return;}
+              return res.redirect('back')  
+            })
+      }
+      else{
+      return res.redirect('back');}
 }
 
 module.exports.signUp = function(req, res) {
